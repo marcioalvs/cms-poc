@@ -19,7 +19,7 @@ WORKDIR /app
 
 # Set environment variables
 ENV NODE_ENV production
-ENV PORT 3000
+ENV PORT 3001
 
 # Create a non-root user and set permissions
 RUN apk add --no-cache tini
@@ -33,5 +33,5 @@ COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 
 # Expose the port and start the application
-EXPOSE 3000
+EXPOSE 3001
 CMD ["tini", "--", "node", "server.js"]
