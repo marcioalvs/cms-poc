@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { fetchPosts } from "./lib/api";
 
+
 export default async function HomePage() {
   const posts = await fetchPosts();
 

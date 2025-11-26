@@ -1,7 +1,8 @@
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://strapi:1337';
 
 export async function fetchPosts() {
-  const res = await fetch(`${STRAPI_URL}/api/posts?populate=*`);
+  const res = await fetch(`${STRAPI_URL}/api/posts?populate=*`, { cache: 'no-store' });
+
   if (!res.ok) {
     throw new Error('Failed to fetch posts');
   }

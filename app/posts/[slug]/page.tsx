@@ -32,11 +32,13 @@ export default async function PostPage({ params }: PostPageProps) {
         />
       )}
 
-    <div className="strapi-content-container">
-      <BlocksRenderer
-        content={post.content}
-      />
-    </div>
+    <article>
+      {post && post.content ? (
+        <BlocksRenderer content={post.content} />
+      ) : (
+        <p>No content found for this post.</p>
+      )}
+    </article>    
 
       {gallery.length > 0 && (
         <section className="mt-8">
