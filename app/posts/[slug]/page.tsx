@@ -25,7 +25,7 @@ export default async function PostPage({ params }: PostPageProps) {
         <Image
           src={cover.formats.large.url.startsWith("http")
             ? cover.formats.large.url
-            : `${process.env.NEXT_PUBLIC_STRAPI_URL}${cover.formats.large.url}`}
+            : `${process.env.STRAPI_PUBLIC_URL}${cover.formats.large.url}`}
           alt={cover.alternativeText || post.title}
           width={800}
           height={400}
@@ -48,7 +48,7 @@ export default async function PostPage({ params }: PostPageProps) {
               const m = item;
               const url = m.url.startsWith("http")
                 ? m.url
-                : `${process.env.NEXT_PUBLIC_STRAPI_URL}${m.url}`;
+                : `${process.env.STRAPI_PUBLIC_URL}${m.url}`;
               if (m.mime.startsWith("image/")) {
                 return (
                   <Image

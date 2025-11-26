@@ -18,7 +18,7 @@ export default async function HomePage() {
                 <Image
                   src={cover.formats.thumbnail.url.startsWith("http")
                     ? cover.formats.thumbnail.url
-                    : `${process.env.NEXT_PUBLIC_STRAPI_URL}${cover.formats.thumbnail.url}`}
+                    : `${process.env.STRAPI_PUBLIC_URL}${cover.formats.thumbnail.url}`}
                   alt={cover.alternativeText || post.title}
                   width={800}
                   height={400}
