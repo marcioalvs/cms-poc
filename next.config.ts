@@ -1,11 +1,22 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
-  output: 'standalone',
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
-    domains: ['cms-poc-strapi.jzqlap.easypanel.host','strapi'], // Add your external image hostnames here
-  },  
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cms-poc-strapi.jzqlap.easypanel.host',
+        port: '', // Leave empty if no specific port
+        pathname: '/**', // Allow any path
+      },
+      {
+        protocol: 'http',
+        hostname: 'strapi',
+        port: '1337',
+        pathname: '/**',
+      },
+      // Add more patterns for other domains
+    ],
+  },
 };
 
 export default nextConfig;
