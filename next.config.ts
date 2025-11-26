@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: 'standalone',
   images: {
-    domains: ['cms-poc-strapi.jzqlap.easypanel.host'], // Add your external image hostnames here
+    domains: ['cms-poc-strapi.jzqlap.easypanel.host','strapi'], // Add your external image hostnames here
   },  
 };
 
