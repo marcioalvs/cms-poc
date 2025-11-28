@@ -14,9 +14,9 @@ export default async function HomePage() {
           <li key={post.id} className="border p-4 rounded">
             {cover && (
               <Image
-                src={cover.formats.thumbnail.url.startsWith("http")
-                  ? cover.formats.thumbnail.url
-                  : `${process.env.STRAPI_PUBLIC_URL}${cover.formats.thumbnail.url}`}
+                src={cover.formats.small.url.startsWith("http")
+                  ? cover.formats.small.url
+                  : `${process.env.STRAPI_PUBLIC_URL}${cover.formats.small.url}`}
                 alt={cover.alternativeText || post.title}
                 width={800}
                 height={400}
