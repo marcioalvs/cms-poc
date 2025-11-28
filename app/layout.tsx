@@ -1,6 +1,7 @@
 import "./globals.css";
 import { headers } from 'next/headers';
 import { fetchBrandConfig } from "./lib/api";
+import { brandColors, BrandKey } from './lib/brands';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -14,7 +15,8 @@ export default async function RootLayout({
   
   // Await na busca dos dados da marca no servidor
   const brandConfig = await fetchBrandConfig(hostname);
-  let divClasses = brandConfig.layoutClasses || '';
+  const colors = brandColors[brandConfig.name as BrandKey] || brandColors.default;
+  let divClasses = colors.bgColor + ' ' + colors.textColor || '';
   divClasses += ' flex flex-col min-h-screen';
 
   return (
