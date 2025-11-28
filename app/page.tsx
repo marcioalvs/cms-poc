@@ -7,7 +7,7 @@ export default async function HomePage() {
   const posts = await fetchPosts();
 
   return (
-    <ul className="space-y-6">
+    <ul className="space-y-6">     
       {posts.map((post: any) => {
         const cover = post.coverImage;
         return (

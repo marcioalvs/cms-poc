@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { fetchPostBySlug } from "../../lib/api";
 import { BlocksRenderer, type BlocksContent } from '@strapi/blocks-react-renderer';
+import { draftMode } from "next/headers";
 
 interface PostPageProps {
   params: { slug: string };
@@ -19,6 +20,10 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <main className="max-w-3xl mx-auto py-8">
+    <div>
+      {/* Visual indicator for editors */}
+      {(await draftMode()).isEnabled && <div style={{ color: 'red', padding: '10px', border: '1px solid red' }}>Draft Mode Active</div>}
+    </div>      
       <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
 
       {cover && (
