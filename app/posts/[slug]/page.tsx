@@ -52,7 +52,7 @@ export default async function PostPage({ params }: PostPageProps) {
               if (m.mime.startsWith("image/")) {
                 return (
                   <Image
-                    key={m.formats.thumbnail.url}
+                    key={m.formats.small.url}
                     src={url}
                     alt={m.alternativeText || ""}
                     width={400}
