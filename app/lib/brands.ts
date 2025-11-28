@@ -17,8 +17,8 @@ export const brandColors: BrandColors = {
     textColor: 'text-white',
   },
   sula: {
-    bgColor: 'bg-blue-500',
-    textColor: 'text-white',
+    bgColor: 'bg-white',
+    textColor: 'text-blue-500',
   },
   inter: {
     bgColor: 'bg-orange-200',
