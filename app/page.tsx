@@ -18,8 +18,8 @@ export default async function HomePage() {
                   ? cover.formats.small.url
                   : `${process.env.STRAPI_PUBLIC_URL}${cover.formats.small.url}`}
                 alt={cover.alternativeText || post.title}
-                width={800}
-                height={400}
+                width={400}
+                height={200}
               />
             )}
             <h2 className="text-xl font-semibold mt-4 mb-2">
