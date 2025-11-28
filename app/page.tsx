@@ -1,4 +1,4 @@
-'use client'; // Isso precisa ser um Client Component para usar o useBrand()
+//'use client'; // Isso precisa ser um Client Component para usar o useBrand()
 import Link from "next/link";
 import Image from "next/image";
 import { fetchPosts } from "./lib/api";
@@ -20,6 +20,7 @@ export default async function HomePage() {
                 alt={cover.alternativeText || post.title}
                 width={400}
                 height={200}
+                className="h-auto w-auto" 
               />
             )}
             <h2 className="text-xl font-semibold mt-4 mb-2">

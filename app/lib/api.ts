@@ -47,9 +47,6 @@ export async function fetchBrandConfig(hostname: string | null) {
   const data = await res.json();
   const brandData = data.data[0];
 
-  console.log("hostname", hostname);
-  console.log("data", data.data[0]);
-
   if (brandData) {
     return {
         primaryColor: brandData.primaryColor,

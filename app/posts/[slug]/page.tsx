@@ -29,6 +29,7 @@ export default async function PostPage({ params }: PostPageProps) {
           alt={cover.alternativeText || post.title}
           width={800}
           height={400}
+          className="h-auto w-auto" 
         />
       )}
 

@@ -28,8 +28,9 @@ export default async function RootLayout({
               <Image 
                 src={`${process.env.STRAPI_PUBLIC_URL}${brandConfig.logoUrl}`} 
                 alt={brandConfig.name + ' Logo'} 
+                className="h-auto w-auto" 
                 width={150} 
-                height={50} 
+                height={50}
               />
             </Link>
             <nav>
